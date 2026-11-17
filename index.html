@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@sealapel - Art Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(
+                180deg,
+                #F5E9E2 0%,
+                #F5E9E2 60%,
+                #EDD9CE 100%
+            );
+            color: #4a1b28;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .header {
+            min-height: 500px;
+
+            background-image:
+                linear-gradient(
+                    135deg,
+                    rgba(119, 51, 68, 0.92) 0%,
+                    rgba(22, 0, 41, 0.94) 100%
+                ),
+                url(header-bg.jpg);
+
+            background-size: cover;
+            background-position: center;
+
+            background-color: #160029;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 30px 50px;
+
+            border-bottom: 1px solid rgba(212, 77, 92, 0.3);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            width: 75px;
+            height: 75px;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #F5E9E2;
+
+            border: 2px solid #D44D5C;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .nav-atas {
+            display: flex;
+            gap: 18px;
+
+            font-weight: bold;
+        }
+
+        .nav-atas a {
+            text-decoration: none;
+            color: #F5E9E2;
+
+            text-shadow:
+                0 1px 3px rgba(22, 0, 41, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .nav-atas a:hover {
+            color: #D44D5C;
+        }
+
+        /* HERO */
+
+        .hero {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .hero small {
+            color: #E3B5A4;
+
+            font-size: 14px;
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            color: #D44D5C;
+
+            font-size: 56px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 3px 10px rgba(22, 0, 41, 0.5);
+
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #F5E9E2;
+
+            font-size: 17px;
+
+            max-width: 600px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            padding: 12px 28px;
+
+            border-radius: 25px;
+
+            background: #D44D5C;
+
+            color: #F5E9E2;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 5px 15px rgba(22, 0, 41, 0.25);
+        }
+
+        .hero-button:hover {
+            background: #F5E9E2;
+
+            color: #773344;
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           INTRO SECTION
+        ========================= */
+
+        .intro-section {
+            padding: 60px 50px 30px;
+
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #D44D5C;
+
+            font-size: 26px;
+
+            margin-bottom: 12px;
+        }
+
+        .intro-section p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #773344;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+        /* =========================
+           ART CATEGORY
+        ========================= */
+
+        .category-section {
+            display: flex;
+
+            gap: 25px;
+
+            padding: 35px 50px 60px;
+
+            justify-content: center;
+        }
+
+        .category-card {
+            flex: 1;
+
+            max-width: 350px;
+
+            min-height: 220px;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(212, 77, 92, 0.25);
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #F5E9E2 0%,
+                    #E3B5A4 100%
+                );
+
+            box-shadow:
+                0 10px 25px rgba(119, 51, 68, 0.15);
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 30px rgba(119, 51, 68, 0.22);
+        }
+
+        .category-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #773344;
+
+            color: #F5E9E2;
+
+            font-size: 27px;
+
+            border: 2px solid #D44D5C;
+        }
+
+        .category-card h3 {
+            color: #D44D5C;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            color: #773344;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+        .category-card a {
+            display: inline-block;
+
+            color: #773344;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #D44D5C;
+
+            padding-bottom: 3px;
+
+            transition: 0.3s;
+        }
+
+        .category-card a:hover {
+            color: #D44D5C;
+        }
+
+        /* =========================
+           FEATURED ART
+        ========================= */
+
+        .featured-section {
+            padding: 0 50px 60px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            color: #D44D5C;
+
+            font-size: 25px;
+
+            margin-bottom: 6px;
+        }
+
+        .section-title p {
+            color: #773344;
+
+            font-size: 14px;
+        }
+
+        .featured-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: flex;
+
+            gap: 30px;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(212, 77, 92, 0.25);
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #F5E9E2 0%,
+                    #E3B5A4 100%
+                );
+
+            box-shadow:
+                0 10px 25px rgba(119, 51, 68, 0.15);
+        }
+
+        .featured-image {
+            flex: 0 0 300px;
+
+            height: 300px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(212, 77, 92, 0.3);
+
+            background: rgba(212, 77, 92, 0.08);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .featured-text {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-text h3 {
+            color: #D44D5C;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .featured-text p {
+            color: #773344;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .gallery-button {
+            display: inline-block;
+
+            align-self: flex-start;
+
+            padding: 10px 20px;
+
+            border-radius: 20px;
+
+            background: #773344;
+
+            color: #F5E9E2;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .gallery-button:hover {
+            background: #D44D5C;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            padding: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(119, 51, 68, 0.95),
+                    rgba(22, 0, 41, 0.95)
+                );
+
+            text-align: center;
+
+            color: #F5E9E2;
+        }
+
+        .contact-section h2 {
+            color: #D44D5C;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            color: #E3B5A4;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border: 1px solid #D44D5C;
+
+            border-radius: 20px;
+
+            color: #F5E9E2;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #D44D5C;
+
+            color: #160029;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer-container {
+            min-height: 200px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding: 30px 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #773344 0%,
+                    #160029 100%
+                );
+
+            border-top: 1px solid rgba(212, 77, 92, 0.3);
+        }
+
+        .footer-logo {
+            flex: 0 0 75px;
+        }
+
+        .footer-logo-frame {
+            width: 75px;
+            height: 75px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            background: #F5E9E2;
+
+            border: 2px solid #F5E9E2;
+        }
+
+        .footer-logo-frame img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .footer-links,
+        .footer-social {
+            flex: 1;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            color: #E3B5A4;
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul,
+        .footer-social ul {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-social li {
+            margin-bottom: 6px;
+
+            font-size: 14px;
+        }
+
+        .footer-links a,
+        .footer-social a {
+            text-decoration: none;
+
+            color: #F5E9E2;
+
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover,
+        .footer-social a:hover {
+            color: #D44D5C;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .header {
+                min-height: 500px;
+
+                padding: 20px;
+            }
+
+            .header-top {
+                flex-direction: column;
+
+                gap: 20px;
+            }
+
+            .nav-atas {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .intro-section {
+                padding: 40px 20px 20px;
+            }
+
+            .category-section {
+                flex-direction: column;
+
+                padding: 30px 20px 40px;
+            }
+
+            .category-card {
+                max-width: none;
+
+                width: 100%;
+            }
+
+            .featured-section {
+                padding: 0 20px 40px;
+            }
+
+            .featured-box {
+                flex-direction: column;
+
+                padding: 20px;
+            }
+
+            .featured-image {
+                width: 100%;
+
+                flex-basis: auto;
+
+                height: auto;
+
+                aspect-ratio: 1 / 1;
+            }
+
+            .featured-text {
+                text-align: center;
+            }
+
+            .gallery-button {
+                align-self: center;
+            }
+
+            .contact-section {
+                padding: 40px 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 25px;
+
+                padding: 35px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+
+    <div class="header-top">
+
+        <div class="logo">
+            <img src="ivan.jpg" alt="Logo sealapel">
+        </div>
+
+        <div class="nav-atas">
+
+            <a href="index.html">Home</a> |
+            <a href="gallery.html">Gallery</a> |
+            <a href="about.html">About</a> |
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero">
+
+        <small>Welcome to my portfolio</small>
+
+        <h1>@sealapel</h1>
+
+        <p>
+            Digital illustration, character art,
+            sketches, and doodles by Calyn.
+        </p>
+
+        <a href="gallery.html" class="hero-button">
+            Lihat Gallery
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro-section">
+
+    <h2>Welcome to @sealapel</h2>
+
+    <p>
+        Hai! Selamat datang di portfolio art-ku.
+        Di sini kamu bisa melihat berbagai macam karya
+        ilustrasi, character art, sketches, dan doodles
+        yang aku buat dari waktu ke waktu.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CATEGORY
+========================= -->
+
+<section class="category-section">
+
+    <div class="category-card">
+
+        <div class="category-icon">
+            ✦
+        </div>
+
+        <h3>Character Art</h3>
+
+        <p>
+            Kumpulan ilustrasi karakter
+            dan artwork digital yang aku buat.
+        </p>
+
+        <a href="gallery.html#character">
+            Lihat karya →
+        </a>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <div class="category-icon">
+            ✎
+        </div>
+
+        <h3>Sketches</h3>
+
+        <p>
+            Berbagai sketch dan coretan
+            yang menjadi bagian dari proses menggambar.
+        </p>
+
+        <a href="gallery.html#sketch">
+            Lihat karya →
+        </a>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <div class="category-icon">
+            ♡
+        </div>
+
+        <h3>Doodles</h3>
+
+        <p>
+            Doodle sederhana yang dibuat
+            untuk bersenang-senang dan bereksperimen.
+        </p>
+
+        <a href="gallery.html#doodle">
+            Lihat karya →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED ART
+========================= -->
+
+<section class="featured-section">
+
+    <div class="section-title">
+
+        <h2>Featured Artwork</h2>
+
+        <p>
+            Salah satu karya yang ingin aku bagikan.
+        </p>
+
+    </div>
+
+
+    <div class="featured-box">
+
+        <div class="featured-image">
+
+            <img
+                src="gambar.jpg.jpeg"
+                alt="Featured artwork @sealapel"
+            >
+
+        </div>
+
+
+        <div class="featured-text">
+
+            <h3>My Art Journey</h3>
+
+            <p>
+                Aku mulai menyukai menggambar sejak awal
+                pandemi Covid-19. Awalnya cuma coret-coret
+                iseng, tapi ternyata menggambar menjadi
+                salah satu hal yang menyenangkan buatku.
+            </p>
+
+            <p>
+                Sampai sekarang aku masih terus belajar,
+                mencoba style baru, dan membagikan
+                karya-karyaku melalui media sosial.
+            </p>
+
+            <a href="about.html" class="gallery-button">
+                Tentang Aku
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <h2>Let's Connect!</h2>
+
+    <p>
+        Follow aku untuk melihat karya terbaru.
+    </p>
+
+    <div class="social-links">
+
+        <a
+            href="https://instagram.com/sealapel"
+            target="_blank"
+        >
+            Instagram @sealapel
+        </a>
+
+        <a
+            href="https://tiktok.com/@sealeleee"
+            target="_blank"
+        >
+            TikTok @sealeleee
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer-container">
+
+    <div class="footer-logo">
+
+        <div class="footer-logo-frame">
+
+            <img
+                src="ivan.jpg"
+                alt="Logo sealapel"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    Gallery
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="footer-social">
+
+        <h4>Medsos</h4>
+
+        <ul>
+
+            <li>
+                <a
+                    href="https://instagram.com/sealapel"
+                    target="_blank"
+                >
+                    Instagram: @sealapel
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://tiktok.com/@sealeleee"
+                    target="_blank"
+                >
+                    TikTok: @sealeleee
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://wa.me/6281286435172"
+                    target="_blank"
+                >
+                    WhatsApp
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>
